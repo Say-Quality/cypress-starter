@@ -24,38 +24,40 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("Verificar_labels", (selector, texto) => {
+Cypress.Commands.add("verificarLabels", (selector, texto) => {
     cy.get(selector)
         .should("exist")
         .and("be.visible")
-        .and("have.text", texto)
-})
+        .and("have.text", texto);
+});
 
-Cypress.Commands.add("Inputtext", (selector, inputtext, textovalue) => {
+Cypress.Commands.add("ingresarTexto", (selector, inputtext, textovalue) => {
+    cy.log('ESTO LARGA ERROR');
+    const element = cy.get(selector);
+
+    element.should("exist")
+        .and("be.visible")
+        .and("be.enabled");
+
+    element.type(inputtext)
+        .should("have.value", textovalue);
+});
+
+Cypress.Commands.add("elegirValorDropdownComplejo", (selector, textovalue) => {
+    const element = cy.get(selector);
+
+    element.should("exist")
+        .and("be.visible")
+        .and("be.enabled")
+        .and("have.value", textovalue);
+
+    element.click();
+});
+
+Cypress.Commands.overwrite("click", (selector) => {
     cy.get(selector)
         .should("exist")
         .and("be.visible")
         .and("be.enabled")
-        .type(inputtext)
-        .and("have.value", textovalue)
-})
-
-Cypress.Commands.add("Clickvalue", (selector,textovalue) => {
-    cy.get(selector)
-        .should("exist")
-        .and("be.visible")
-        .and("be.enabled")
-        .and("have.value", textovalue)
-        .click()
-})
-
-Cypress.Commands.add("Click", (selector) => {
-    cy.get(selector)
-        .should("exist")
-        .and("be.visible")
-        .and("be.enabled")
-        .click()
-})
-
-
-
+        .click();
+});

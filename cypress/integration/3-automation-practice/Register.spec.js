@@ -7,8 +7,8 @@ describe('Register', () => {
   })
 
   it.only('Registro con email válido', () => {
-    cy.fixture("Selectors/registracion").then((selectores) => {
-      cy.fixture("Data/registracion").then((data) => {
+    cy.fixture("selectors/registracion").then((selectores) => {
+      cy.fixture("data/registracion").then((data) => {
         // Verifico que este en la pagina de registro
         cy.get(selectores.titulo)
           .should("exist")
@@ -46,8 +46,8 @@ describe('Register', () => {
     })
   })
   it('Registro con email ya existente', () => {
-    cy.fixture("Selectors/registracion").then((selectores) => {
-      cy.fixture("Data/registracion").then((data) => {
+    cy.fixture("selectors/registracion").then((selectores) => {
+      cy.fixture("data/registracion").then((data) => {
         // Verifico que este en la pagina de registro
         cy.get(selectores.titulo)
           .should("exist")
@@ -81,8 +81,8 @@ describe('Register', () => {
   })
 
  it('Registro con formato de email inválido', () => {
-    cy.fixture("Selectors/registracion").then((selectores) => {
-      cy.fixture("Data/registracion").then((data) => {
+    cy.fixture("selectors/registracion").then((selectores) => {
+      cy.fixture("data/registracion").then((data) => {
         // Verifico que este en la pagina de registro
         cy.get(selectores.titulo)
           .should("exist")
