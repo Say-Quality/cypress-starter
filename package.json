@@ -1,17 +1,15 @@
 {
-  "name": "cypress-say-quality",
+  "name": "cypress-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este es un ejemplo basico de Cypress.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "cypress run",
+    "debug": "cypress open"
   },
-  "author": "Ezequiel Salazar",
+  "author": "Matias J. Magni",
   "license": "MIT",
-  "dependencies": {
-    "cypress": "^9.6.0"
-  },
   "devDependencies": {
-    "cypress-plugin-tab": "^1.0.5"
+    "cypress": "^9.6.1"
   }
 }
