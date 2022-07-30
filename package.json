@@ -10,6 +10,6 @@
   "author": "Matias J. Magni",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^9.6.1"
+    "cypress": "^10.3.1"
   }
 }
